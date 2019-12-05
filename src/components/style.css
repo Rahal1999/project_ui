@@ -58,7 +58,7 @@
 
 .makeStyles-searchIcon-15 {
     width: 30px;
-    top: -4px;
+    top: -4px !important;
 
     height: 100%;
     display: flex;

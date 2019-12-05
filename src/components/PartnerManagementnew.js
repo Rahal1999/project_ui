@@ -39,18 +39,34 @@ const useStyles = makeStyles(theme => ({
 
 
     },
+    selectInputLabel: {
+        marginLeft: theme.spacing(2),
+    },
+    dialogCreateBtn: {
+        marginRight: theme.spacing(5),
+    },
     countrytxt: {
         marginLeft: theme.spacing(2),
         marginTop: theme.spacing(1),
         marginRight: theme.spacing(1),
         flexGrow: 1,
-        width: 225,
+        width: 300,
+    },
+    countrySelect: {
+        marginLeft: theme.spacing(2),
+        marginTop: theme.spacing(1),
+        marginRight: theme.spacing(1),
+        flexGrow: 1,
+        width: 300,
+    },
+    dialogTitle: {
+        marginLeft: theme.spacing(2),
     },
     textField: {
         marginLeft: theme.spacing(2),
         marginRight: theme.spacing(1),
         flexGrow: 1,
-        width: 225,
+        width: 300,
     },
     table: {
         minWidth: 250,
@@ -123,10 +139,36 @@ export default function PartnerManagementnew() {
 
     const [open, setOpen] = React.useState(false);
 
+    const [openCountrySelect, setopenCountrySelect] = React.useState(false);
+
+    const [openCreate, setOpenCreate] = React.useState(false);
+
+    const [openUpdate, setOpenUpdate] = React.useState(false);
+
     const [value, setValue] = React.useState('female');
 
     const handleChange = event => {
         setValue(event.target.value);
+    };
+
+    const handleClickOpenUpdate = () => {
+        setOpenUpdate(true);
+
+    };
+
+    const handleCloseUpdate = () => {
+
+        setOpenUpdate(false);
+    };
+
+    const handleClickOpenCountrySelect = () => {
+        setopenCountrySelect(true);
+
+    };
+
+    const handleCloseCountrySelect = () => {
+
+        setopenCountrySelect(false);
     };
 
     const handleClickOpen = () => {
@@ -135,13 +177,18 @@ export default function PartnerManagementnew() {
     };
 
     const handleClickOpenCreate = () => {
-        setOpen(true);
+        setOpenCreate(true);
 
     };
 
     const handleClose = () => {
 
         setOpen(false);
+    };
+
+    const handleCloseCreate = () => {
+
+        setOpenCreate(false);
     };
 
     const handleOpen = () => {
@@ -153,7 +200,7 @@ export default function PartnerManagementnew() {
 
         <IconButton>
             <div class="tableicons">
-                <EditOutlinedIcon color={"primary"}/>
+                <EditOutlinedIcon color={"primary"} onClick={handleClickOpenUpdate}/>
                 <DeleteOutlineOutlinedIcon color={"error"} onClick={handleClickOpen}/>
             </div>
         </IconButton>
@@ -256,45 +303,148 @@ export default function PartnerManagementnew() {
                 </Table>
             </Paper>
 
-            {/*<Dialog*/}
-            {/*className={classes.dialog}*/}
-            {/*open={open}*/}
-            {/*onClose={handleClose}*/}
-            {/*>*/}
-            {/*<DialogTitle>Remove Partner</DialogTitle>*/}
-
-            {/*<DialogContent >*/}
-
-            {/*<DialogContentText >*/}
-            {/*Are you sure you want to delete this row data?*/}
-            {/*</DialogContentText>*/}
-            {/*</DialogContent>*/}
-
-
-            {/*<DialogActions>*/}
-            {/*<Button onClick={handleClose} color="primary">Close</Button>*/}
-            {/*<Button onClick={handleClose} color="secondary">Agree</Button>*/}
-
-
-            {/*</DialogActions>*/}
-
-            {/*</Dialog>*/}
-
-
             <Dialog
                 className={classes.dialog}
                 open={open}
                 onClose={handleClose}
             >
-                <DialogTitle>Create Partner</DialogTitle>
+                <DialogTitle>Remove Partner</DialogTitle>
+
+                <DialogContent>
+
+                    <DialogContentText>
+                        Are you sure you want to delete this row data?
+                    </DialogContentText>
+                </DialogContent>
+
+
+                <DialogActions>
+                    <Button onClick={handleClose} color="primary">Close</Button>
+                    <Button onClick={handleClose} color="secondary">Agree</Button>
+
+
+                </DialogActions>
+
+            </Dialog>
+
+
+            <Dialog
+                className={classes.dialog}
+                open={openCreate}
+                onClose={handleCloseCreate}
+            >
+                <DialogTitle className={classes.dialogTitle}>Create Partner</DialogTitle>
 
                 <DialogContent>
 
                     <DialogContentText>
 
                         <div>
-                            <TextField className={classes.countrytxt} id="outlined-basic2" label="Country"
-                                       variant="outlined"/>
+
+                            <InputLabel id="demo-controlled-open-select-label"
+                                        className={classes.selectInputLabel}>Country</InputLabel>
+                            <Select
+                                labelId="demo-controlled-open-select-label"
+                                id="demo-controlled-open-select"
+
+                                open={openCountrySelect}
+                                onClose={handleCloseCountrySelect}
+                                onOpen={handleClickOpenCountrySelect}
+                                value={age}
+                                onChange={handleChange}
+                                className={classes.countrySelect}
+                                variant={"outlined"}
+                            >
+                                <MenuItem value="">
+                                    <em>None</em>
+                                </MenuItem>
+                                <MenuItem value={10}>Jordan</MenuItem>
+                                <MenuItem value={20}>Kuwait</MenuItem>
+                                <MenuItem value={30}>Bahrain</MenuItem>
+                            </Select>
+
+                        </div>
+
+                        <div>
+                            <TextField className={classes.countrytxt} id="outlined-basic2" label="Partner Name"
+                                       variant="outlined" placeholder={"John Smith"}/>
+                        </div>
+                        <div>
+                            <TextField className={classes.countrytxt} id="outlined-basic2" label="Address"
+                                       variant="outlined" placeholder={"No.11,Main Street, Kuwait"}/>
+                        </div>
+
+
+                        <div>
+                            <TextField className={classes.countrytxt} id="outlined-basic2" label="E-mail"
+                                       variant="outlined" placeholder={"abc@gmail.com"}/>
+                        </div>
+                        <div>
+                            <TextField className={classes.countrytxt} id="outlined-basic2" label="Contact"
+                                       variant="outlined" placeholder={"094-051-6565"}/>
+                        </div>
+
+                        <TextField
+                            id="outlined-multiline-static"
+                            label="Opening Hours"
+                            multiline
+                            rows="4"
+                            placeholder="eg : Sun: 6.30am-8.30am "
+                            className={classes.textField}
+                            margin="normal"
+                            variant="outlined"
+                        />
+
+                    </DialogContentText>
+                </DialogContent>
+
+
+                <DialogActions>
+                    <Button onClick={handleCloseCreate} color="primary">Close</Button>
+                    <Button className={classes.dialogCreateBtn} onClick={handleCloseCreate}
+                            color="secondary">Create</Button>
+
+
+                </DialogActions>
+
+            </Dialog>
+
+
+            <Dialog
+                className={classes.dialog}
+                open={openUpdate}
+                onClose={handleCloseUpdate}
+            >
+                <DialogTitle className={classes.dialogTitle}>Update Partner</DialogTitle>
+
+                <DialogContent>
+
+                    <DialogContentText>
+
+                        <div>
+
+                            <InputLabel id="demo-controlled-open-select-label"
+                                        className={classes.selectInputLabel}>Country</InputLabel>
+                            <Select
+                                labelId="demo-controlled-open-select-label"
+                                id="demo-controlled-open-select"
+
+                                open={openCountrySelect}
+                                onClose={handleCloseCountrySelect}
+                                onOpen={handleClickOpenCountrySelect}
+                                value={age}
+                                onChange={handleChange}
+                                className={classes.countrySelect}
+                                variant={"outlined"}
+                            >
+                                <MenuItem value="">
+                                    <em>None</em>
+                                </MenuItem>
+                                <MenuItem value={10}>Dubai</MenuItem>
+                                <MenuItem value={20}>USA</MenuItem>
+                                <MenuItem value={30}>Canada</MenuItem>
+                            </Select>
+
                         </div>
 
                         <div>
@@ -305,6 +455,8 @@ export default function PartnerManagementnew() {
                             <TextField className={classes.countrytxt} id="outlined-basic2" label="Address"
                                        variant="outlined"/>
                         </div>
+
+
                         <div>
                             <TextField className={classes.countrytxt} id="outlined-basic2" label="E-mail"
                                        variant="outlined"/>
@@ -324,33 +476,15 @@ export default function PartnerManagementnew() {
                             margin="normal"
                             variant="outlined"
                         />
-                        {/*<FormControl className={classes.formControl}>*/}
-                        {/*<InputLabel id="demo-controlled-open-select-label">Age</InputLabel>*/}
-                        {/*<Select*/}
-                        {/*labelId="demo-controlled-open-select-label"*/}
-                        {/*id="demo-controlled-open-select"*/}
-                        {/*open={open}*/}
-                        {/*onClose={handleClose}*/}
-                        {/*onOpen={handleOpen}*/}
-                        {/*value={age}*/}
-                        {/*onChange={handleChange}*/}
-                        {/*>*/}
-                        {/*<MenuItem value="">*/}
-                        {/*<em>None</em>*/}
-                        {/*</MenuItem>*/}
-                        {/*<MenuItem value={10}>Ten</MenuItem>*/}
-                        {/*<MenuItem value={20}>Twenty</MenuItem>*/}
-                        {/*<MenuItem value={30}>Thirty</MenuItem>*/}
-                        {/*</Select>*/}
-                        {/*</FormControl>*/}
 
                     </DialogContentText>
                 </DialogContent>
 
 
                 <DialogActions>
-                    <Button onClick={handleClose} color="primary">Close</Button>
-                    <Button onClick={handleClose} color="secondary">Create</Button>
+                    <Button onClick={handleCloseUpdate} color="primary">Close</Button>
+                    <Button className={classes.dialogCreateBtn} onClick={handleCloseUpdate}
+                            color="secondary">Create</Button>
 
 
                 </DialogActions>

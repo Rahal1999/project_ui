@@ -7,6 +7,7 @@ import LeftNavigationBar from "./components/LeftNavigationBar";
 import Test from "./components/Test";
 import PartnerManagement from "./components/PartnerManagement";
 import PartnerManagementnew from "./components/PartnerManagementnew";
+import Overview from "./components/Overview";
 
 function App() {
   return (
@@ -15,11 +16,12 @@ function App() {
         {/*<SwipeableTemporaryDrawer/>*/}
         {/*<LeftMenuee/>*/}
         {/*<LeftNavigationBar/>*/}
-        <Test/>
+
         {/*<PartnerManagement/>*/}
+
+        <Test/>
         <PartnerManagementnew/>
-
-
+        {/*<Overview/>*/}
 
     </div>
   );

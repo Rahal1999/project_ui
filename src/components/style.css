@@ -1,5 +1,5 @@
 .left_menu {
-    width: 300px;
+    width: 24%;
     background-color: #041b26;
     height: 675px;
     position: fixed;
@@ -28,7 +28,7 @@
     cursor: pointer;
 }
 .user{
-    left: 226px;
+    left: 75%;
     position: relative;
     color: white;
 }
@@ -43,7 +43,7 @@
     flex-shrink: 0;
     user-select: none;
     position: relative;
-    margin-left: 76%;
+    margin-left: 77%;
     top: 5px;
     color: white;
 }
@@ -53,12 +53,12 @@
 }
 
 .topbar {
-    width: 933px;
+    width: 97%;
 }
 
 .makeStyles-searchIcon-15 {
     width: 30px;
-    top: -4px !important;
+    top: -4% !important;
 
     height: 100%;
     display: flex;
@@ -105,3 +105,39 @@
     position: absolute;
 }
 
+.MuiAppBar-colorPrimary {
+    color: #fff;
+    background-color: #0a3144 !important;
+}
+
+
+.piechartOverview{
+    position: relative;
+}
+
+.WithStyles\(ForwardRef\(TableCell\)\)-head-231 {
+    color: #fff;
+    background-color: rgba(5, 45, 64, 0.96) !important;
+}
+
+
+/*.MuiGrid-container {*/
+    /*width: 100%;*/
+    /*display: flex;*/
+    /*flex-wrap: wrap;*/
+    /*box-sizing: border-box;*/
+    /*position: relative;*/
+    /*margin-left: 30%;*/
+/*}*/
+
+
+.MuiFormControl-root {
+    border: 0;
+    /*margin: 1% !important;*/
+    display: inline-flex;
+    padding: 0px;
+    position: relative;
+    min-width: 0;
+    flex-direction: column;
+    vertical-align: top;
+}

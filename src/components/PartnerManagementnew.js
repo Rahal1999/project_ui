@@ -11,10 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
-// import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
-// import { fade, makeStyles } from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
 import AddOutlinedIcon from '@material-ui/icons/AddOutlined';
 import SearchIcon from '@material-ui/icons/Search';
 import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
@@ -29,7 +26,8 @@ import TextField from '@material-ui/core/TextField';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
-import FormControl from '@material-ui/core/FormControl';
+
+
 
 
 const useStyles = makeStyles(theme => ({
@@ -60,8 +58,13 @@ const useStyles = makeStyles(theme => ({
         width: 300,
     },
     dialogTitle: {
-        marginLeft: theme.spacing(2),
+        marginLeft: theme.spacing(0),
+        backgroundColor:'#010d121f',
+
     },
+        removeDialog:{
+            backgroundColor:'#ff0000ab',
+        },
     textField: {
         marginLeft: theme.spacing(2),
         marginRight: theme.spacing(1),
@@ -135,6 +138,8 @@ function createData(name, address, email, contact, country, openHours, actions) 
 
 export default function PartnerManagementnew() {
 
+
+
     const [age, setAge] = React.useState('');
 
     const [open, setOpen] = React.useState(false);
@@ -173,6 +178,7 @@ export default function PartnerManagementnew() {
 
     const handleClickOpen = () => {
         setOpen(true);
+
 
     };
 
@@ -286,35 +292,49 @@ export default function PartnerManagementnew() {
                         </TableRow>
                     </TableHead>
                     <TableBody>
+
                         {rows.map(row => (
                             <TableRow key={row.name}>
                                 <TableCell component="th" scope="row">
                                     {row.name}
                                 </TableCell>
+
                                 <TableCell align="center">{row.address}</TableCell>
                                 <TableCell align="center">{row.email}</TableCell>
                                 <TableCell align="center">{row.contact}</TableCell>
                                 <TableCell align="center">{row.country}</TableCell>
                                 <TableCell align="center">{row.openHours}</TableCell>
-                                <TableCell align="center">{row.actions}</TableCell>
+                                <TableCell  align="center">{row.actions}
+
+
+                                </TableCell>
+
                             </TableRow>
+
+
+
+
                         ))}
+
+
                     </TableBody>
                 </Table>
             </Paper>
-
             <Dialog
                 className={classes.dialog}
                 open={open}
                 onClose={handleClose}
             >
-                <DialogTitle>Remove Partner</DialogTitle>
+                <DialogTitle className={classes.removeDialog}>Remove Partner</DialogTitle>
 
                 <DialogContent>
 
                     <DialogContentText>
+
                         Are you sure you want to delete this row data?
+
                     </DialogContentText>
+
                 </DialogContent>
 
 
@@ -424,7 +444,8 @@ export default function PartnerManagementnew() {
                         <div>
 
                             <InputLabel id="demo-controlled-open-select-label"
-                                        className={classes.selectInputLabel}>Country</InputLabel>
+                                        className={classes.selectInputLabel}
+                           >Country</InputLabel>
                             <Select
                                 labelId="demo-controlled-open-select-label"
                                 id="demo-controlled-open-select"
@@ -436,6 +457,7 @@ export default function PartnerManagementnew() {
                                 onChange={handleChange}
                                 className={classes.countrySelect}
                                 variant={"outlined"}
+
                             >
                                 <MenuItem value="">
                                     <em>None</em>
@@ -484,7 +506,7 @@ export default function PartnerManagementnew() {
                 <DialogActions>
                     <Button onClick={handleCloseUpdate} color="primary">Close</Button>
                     <Button className={classes.dialogCreateBtn} onClick={handleCloseUpdate}
-                            color="secondary">Create</Button>
+                            color="secondary">Update</Button>
 
 
                 </DialogActions>

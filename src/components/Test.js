@@ -3,9 +3,15 @@ import './style.css';
 import PersonIcon from '@material-ui/icons/Person';
 import Button from '@material-ui/core/Button';
 import PermIdentityOutlinedIcon from '@material-ui/icons/PermIdentityOutlined';
+import Overview from "./Overview";
+
+
+
 
 
 class Test extends React.Component{
+
+
 
     render(){
         return(
@@ -36,7 +42,7 @@ class Test extends React.Component{
                     <button className="menu_btn">SL Embassy Management</button>
 
 
-                    <button className="menu_btn">Promotion Management</button>
+                    <button className="menu_btn" onClick={<Overview/>} >Promotion Management</button>
                 </div>
 
                 <div class="bottom">

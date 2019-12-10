@@ -9,6 +9,7 @@ import PartnerManagement from "./components/PartnerManagement";
 import PartnerManagementnew from "./components/PartnerManagementnew";
 import Overview from "./components/Overview";
 
+
 function App() {
   return (
     <div >
@@ -29,10 +30,10 @@ function App() {
 
         {/*<PartnerManagement/>*/}
 
-        <Test/>
-        <PartnerManagementnew/>
-        {/*<Overview/>*/}
-
+            <Test/>
+            <PartnerManagementnew/>
+        {/*<DonutChart/>*/}
+{/*<Overview/>*/}
     </div>
   );
 }

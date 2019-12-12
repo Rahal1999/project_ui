@@ -22,7 +22,6 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
@@ -257,7 +256,7 @@ export default function PartnerManagementnew() {
 
                         <div className={classes.search}>
                             <div className={classes.searchIcon}>
-                                <SearchIcon/>
+                                <SearchIcon class="search"/>
                             </div>
                             <InputBase
                                 placeholder="Search…"
@@ -271,7 +270,7 @@ export default function PartnerManagementnew() {
                         </div>
                     </Toolbar>
                     <div class="addicon">
-                        <AddOutlinedIcon onClick={handleClickOpenCreate}/>
+                        <AddOutlinedIcon class="add" onClick={handleClickOpenCreate}/>
                     </div>
                 </AppBar>
 
@@ -288,7 +287,7 @@ export default function PartnerManagementnew() {
                             <TableCell align="center">Contact</TableCell>
                             <TableCell align="center">Country</TableCell>
                             <TableCell align="center">Opening Hours</TableCell>
-                            <TableCell align="center">Acions</TableCell>
+                            <TableCell align="center">Actions</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>

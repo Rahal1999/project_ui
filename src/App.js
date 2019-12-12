@@ -2,13 +2,10 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import LeftMenuee from "./components/LeftMenue";
-import LeftNavigationBar from "./components/LeftNavigationBar";
-import Test from "./components/Test";
-import PartnerManagement from "./components/PartnerManagement";
 import PartnerManagementnew from "./components/PartnerManagementnew";
+import Sidebar from "./components/LeftNavigationBar";
+import Test from "./components/Test";
 import Overview from "./components/Overview";
-
 
 function App() {
   return (
@@ -23,16 +20,11 @@ function App() {
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         </body>
-     {/*<DenseAppBar/>*/}
-        {/*<SwipeableTemporaryDrawer/>*/}
-        {/*<LeftMenuee/>*/}
-        {/*<LeftNavigationBar/>*/}
 
-        {/*<PartnerManagement/>*/}
-
-            <Test/>
+        <Sidebar/>
+            {/*<Test/>*/}
             <PartnerManagementnew/>
-        {/*<DonutChart/>*/}
+
 {/*<Overview/>*/}
     </div>
   );

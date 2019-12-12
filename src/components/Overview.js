@@ -110,7 +110,7 @@ export default function Overview() {
     const options = {
         title: "No of users",
         pieHole: 0.5,
-        is3D: true
+        is3D: false
     };
 
 
@@ -118,7 +118,7 @@ export default function Overview() {
         <div>
             <Test/>
 
-
+            <div class="overviewHeader">
             <MuiPickersUtilsProvider utils={DateFnsUtils} >
 
                 <Grid container justify="flex-end" >
@@ -160,6 +160,7 @@ export default function Overview() {
                     />
                     </Grid>
                 </MuiPickersUtilsProvider>
+            </div>
             <div style={{display: 'flex', maxWidth: '100%', marginLeft: '28%'}}>
                 <Chart
                     chartType="PieChart"

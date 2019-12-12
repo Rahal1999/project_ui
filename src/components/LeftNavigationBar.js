@@ -1,83 +1,93 @@
-import React from 'react';
-import './style.css';
-import Button from '@material-ui/core/Button';
-import Tooltip from '@material-ui/core/Tooltip';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import {makeStyles} from '@material-ui/core/styles';
+import React from 'react'
+import List from '@material-ui/core/List'
+import ListItem from '@material-ui/core/ListItem'
+import ListItemText from '@material-ui/core/ListItemText'
 import PersonIcon from '@material-ui/icons/Person';
+import SettingsIcon from '@material-ui/icons/Settings';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import Typography from '@material-ui/core/Typography';
+import {makeStyles} from "@material-ui/core";
 
-const useStyles = makeStyles(theme => ({
+const items = [
+    {name: 'home', label: 'Dashboard'},
+    {name: 'billing', label: 'User Management'},
+    {name: 'settings', label: 'Partner Management'},
+    {name: 'settings', label: 'Bank Representative Management'},
+    {name: 'home', label: 'Com Bank Branch Management'},
+    {name: 'home', label: 'SL Embassy Management'},
+    {name: 'home', label: 'Promotion Management'},
+]
 
-
-    left_menu: {
-        width: '20%',
-        backgroundColor: '#00796B',
-        height: '672px',
+const useStyles = makeStyles({
+    root:{
+        maxWidth:'23%',
+        maxHeight:'100%',
+        width:'25%',
+        position:'fixed',
+        backgroundColor:'lightblue',
     },
-    left_menu_btn: {
-        width: '100%',
-        justifyContent: 'normal',
-        fontSize:'8pt',
+
+    user: {
+
+        left:'75%',
+        position:'relative'
     },
-    left_menu_btn_footer: {
-        marginTop:-100,
-        fontSize:'8pt',
-        width: '100%',
-        justifyContent: 'normal',
+    userIcon:{
+        left:'73%',
+        position:'relative'
     },
-    user:{
-        left: '73%',
-    }
-
-}));
-
-export default function LeftNavigationBar() {
 
 
+});
+
+function Sidebar() {
     const classes = useStyles();
-
     return (
-
         <div>
-
-        <div className={classes.left_menu}>
-            <Typography className={classes.user}> User  <PersonIcon/></Typography>
+        <div className={classes.root}>
 
 
-            <Button className={classes.left_menu_btn}> Dashboard</Button>
-
-
-            <Button className={classes.left_menu_btn}>User Management</Button>
-
-
-            <Button className={classes.left_menu_btn}>Partner Management</Button>
-
-
-            <Button className={classes.left_menu_btn}>Bank Representative Management</Button>
-
-
-            <Button className={classes.left_menu_btn}>Com Bank Branch Management</Button>
-
-
-            <Button className={classes.left_menu_btn}>SL Embassy Management</Button>
-
-
-            <Button className={classes.left_menu_btn}>Promotion Management</Button>
-
-
-
-
-
-        </div>
             <div>
-                <Button className={classes.left_menu_btn_footer}>Settings</Button>
-                <Button className={classes.left_menu_btn_footer}>Logout</Button>
+                <Typography
+                    className={classes.user}
+                    variant={"button"}
+                    align={"justify"}
+                >
+                    User
+                </Typography>
+                <PersonIcon className={classes.userIcon}/>
             </div>
+            <hr/>
+
+
+            <div class="middle">
+                <List disablePadding dense c>
+                    {items.map(({label, name, ...rest}) => (
+                        <ListItem key={name} button {...rest}>
+                            <Typography variant={"subtitle1"} >{label}</Typography>
+                        </ListItem>
+                    ))}
+                </List>
+            </div>
+
+
+            <div className="bottom2">
+                <hr/>
+                <List disablePadding dense>
+                    <ListItem>
+                        <ListItemText className="settings"><SettingsIcon/>Settings</ListItemText>
+                    </ListItem>
+
+                    <ListItem>
+                        <ListItemText className="logout"><ExitToAppIcon/>Logout</ListItemText>
+                    </ListItem>
+                </List>
+            </div>
+
         </div>
 
-    );
-
+        </div>
+    )
 }
 
-
+export default Sidebar

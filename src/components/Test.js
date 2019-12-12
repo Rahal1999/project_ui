@@ -18,7 +18,7 @@ class Test extends React.Component{
             <div class='left_menu'>
                <div class="top">
 
-                <label class="user">User</label><PersonIcon />
+                <label class="user">User</label><PersonIcon  class="userIcon"/>
 
                </div>
 

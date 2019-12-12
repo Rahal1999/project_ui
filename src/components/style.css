@@ -24,7 +24,7 @@
 }
 
 .bottom{
-    margin-top: 300px;
+    margin-top: 98%;
     cursor: pointer;
 }
 .user{
@@ -46,6 +46,22 @@
     margin-left: 77%;
     top: 5px;
     color: white;
+}
+
+.MuiSvgIcon-root {
+    fill: currentColor;
+
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    font-size: 1.5rem;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    flex-shrink: 0;
+    user-select: none;
+    position: relative;
+    margin-left: 7%;
+    top: 5px;
+    color: rgba(0, 0, 0, 0.79);
 }
 
 .table{
@@ -73,6 +89,7 @@
     right: 50px;
     top: 14px;
     position: absolute;
+
 }
 
 .tableicon {
@@ -118,6 +135,7 @@
 .WithStyles\(ForwardRef\(TableCell\)\)-head-231 {
     color: #fff;
     background-color: rgba(5, 45, 64, 0.96) !important;
+/*background-color: rgb(51, 153, 197) !important;*/
 }
 
 
@@ -140,4 +158,76 @@
     min-width: 0;
     flex-direction: column;
     vertical-align: top;
+}
+
+.sidebar {
+    max-width: 25% !important;
+    max-height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+.userIcon {
+    fill: currentColor;
+
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    font-size: 1.5rem;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    flex-shrink: 0;
+    user-select: none;
+    position: relative;
+    margin-left: 77%;
+    top: 5px;
+    color: white !important;
+}
+
+.add {
+    fill: currentColor;
+
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    font-size: 1.5rem;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    flex-shrink: 0;
+    user-select: none;
+    position: relative;
+    margin-left: 77%;
+    top: 5px;
+    color: white !important;
+}
+
+.search {
+    fill: currentColor;
+
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    font-size: 1.5rem;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    flex-shrink: 0;
+    user-select: none;
+    position: relative;
+    margin-left: 77%;
+    top: 5%;
+    color: white !important;
+}
+
+
+.user2{
+    right: 75% !important;
+}
+
+.bottom2{
+    margin-top: 100%;
+    cursor: pointer;
+    position: relative;
+}
+.middle{
+    margin-top: 2%;
+    position: relative;
 }

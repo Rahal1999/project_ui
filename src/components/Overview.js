@@ -19,7 +19,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import {withStyles, makeStyles} from '@material-ui/core/styles';
-
+import PersonIcon from '@material-ui/icons/Person';
 
 const StyledTableCell = withStyles(theme => ({
     head: {
@@ -78,9 +78,13 @@ const useStyles = makeStyles({
     },
     dateFrom:{
         margin: '1% !important',
+        position: 'relative',
+        left:'6%',
     },
     dateTo:{
         margin: '1% !important',
+        position: 'relative',
+        right:'0%',
     }
 
 
@@ -115,9 +119,9 @@ export default function Overview() {
 
 
     return (
-        <div>
-            <Test/>
-
+        <div class="overviewww">
+            {/*<Test/>*/}
+{/*<LeftNavigationBar/>*/}
             <div class="overviewHeader">
             <MuiPickersUtilsProvider utils={DateFnsUtils} >
 
@@ -182,7 +186,7 @@ export default function Overview() {
                     <TableHead>
                         <TableRow>
                             <StyledTableCell >Service Requested</StyledTableCell>
-                            <StyledTableCell align="center">No. of users</StyledTableCell>
+                            <StyledTableCell align="center">No. of users<PersonIcon class="noOfUserIcon"/></StyledTableCell>
 
 
                         </TableRow>

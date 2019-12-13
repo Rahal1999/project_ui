@@ -7,15 +7,16 @@ import SettingsIcon from '@material-ui/icons/Settings';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import Typography from '@material-ui/core/Typography';
 import {makeStyles} from "@material-ui/core";
+import DashboardOutlinedIcon from '@material-ui/icons/DashboardOutlined';
 
 const items = [
-    {name: 'home', label: 'Dashboard'},
-    {name: 'billing', label: 'User Management'},
-    {name: 'settings', label: 'Partner Management'},
-    {name: 'settings', label: 'Bank Representative Management'},
-    {name: 'home', label: 'Com Bank Branch Management'},
-    {name: 'home', label: 'SL Embassy Management'},
-    {name: 'home', label: 'Promotion Management'},
+    {name: 'dashboard', label: 'Dashboard'},
+    {name: 'userManagement', label: 'User Management'},
+    {name: 'partnerManagement', label: 'Partner Management'},
+    {name: 'bankManagement', label: 'Bank Representative Management'},
+    {name: 'ComBankPartnerManagement', label: 'Com Bank Branch Management'},
+    {name: 'slEmbassyManagement', label: 'SL Embassy Management'},
+    {name: 'promotionManagement', label: 'Promotion Management'},
 ]
 
 const useStyles = makeStyles({
@@ -24,18 +25,40 @@ const useStyles = makeStyles({
         maxHeight:'100%',
         width:'25%',
         position:'fixed',
-        backgroundColor:'lightblue',
+        backgroundColor:'#0b3044',
     },
 
     user: {
-
+        color:'white',
         left:'75%',
         position:'relative'
     },
     userIcon:{
-        left:'73%',
-        position:'relative'
+        left:'70%',
+        position:'relative',
+        color:'white',
     },
+    options:{
+        color:'white',
+        fontsize: 14,
+
+    },
+    typography:{
+        fontsize:14,
+    },
+    settings:{
+        color:'white',
+
+    },
+    logout:{
+        color:'white',
+    },
+    settingsIcon:{
+        color:'white',
+    },
+    logoutIcon:{
+        color:'white',
+    }
 
 
 });
@@ -64,7 +87,7 @@ function Sidebar() {
                 <List disablePadding dense c>
                     {items.map(({label, name, ...rest}) => (
                         <ListItem key={name} button {...rest}>
-                            <Typography variant={"subtitle1"} >{label}</Typography>
+                            <Typography className={classes.options} variant={"subtitle1"} >{ label}</Typography>
                         </ListItem>
                     ))}
                 </List>
@@ -75,11 +98,13 @@ function Sidebar() {
                 <hr/>
                 <List disablePadding dense>
                     <ListItem>
-                        <ListItemText className="settings"><SettingsIcon/>Settings</ListItemText>
-                    </ListItem>
+
+                        <ListItemText className={classes.settings}><SettingsIcon className={classes.settingsIcon}/>   Settings</ListItemText>
+
+                        </ListItem>
 
                     <ListItem>
-                        <ListItemText className="logout"><ExitToAppIcon/>Logout</ListItemText>
+                        <ListItemText className={classes.logout}><ExitToAppIcon className={classes.logoutIcon}/>   Logout</ListItemText>
                     </ListItem>
                 </List>
             </div>

@@ -25,6 +25,7 @@ import TextField from '@material-ui/core/TextField';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
+import Test from "./Test";
 
 
 
@@ -234,6 +235,8 @@ export default function PartnerManagementnew() {
     const classes = useStyles();
 
     return (
+        <div>
+        {/*<Test/>*/}
         <div class="table">
             <div class="topbar">
 
@@ -511,6 +514,7 @@ export default function PartnerManagementnew() {
                 </DialogActions>
 
             </Dialog>
+        </div>
         </div>
     );
 }

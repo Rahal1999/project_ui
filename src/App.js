@@ -21,9 +21,9 @@ function App() {
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         </body>
 
-        <Sidebar/>
-            {/*<Test/>*/}
-            <PartnerManagementnew/>
+        {/*<Sidebar/>*/}
+            <Test/>
+            {/*<PartnerManagementnew/>*/}
 
 {/*<Overview/>*/}
     </div>

@@ -8,7 +8,7 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import {makeStyles} from "@material-ui/core";
 import SettingsIcon from '@material-ui/icons/Settings';
 import PartnerManagementnew from "./PartnerManagementnew";
-
+import QueueAnim from 'rc-queue-anim';
 // const useStyles = makeStyles(theme =>({
 //     logoutIcon:{
 //         color:'white',
@@ -22,7 +22,6 @@ import PartnerManagementnew from "./PartnerManagementnew";
 
 
 class Test extends React.Component {
-
 
 
     constructor(props) {
@@ -55,48 +54,58 @@ class Test extends React.Component {
     render() {
         // const  {classes} = this.props;
         return (
-            <div >
-            <div class='left_menu'>
-                <div class="top">
+            <div class="testmain">
+                <div class='left_menu'>
+                    <div class="top">
 
-                    <label class="user">User</label><PersonIcon class="userIcon"/>
+                        <label class="user">User</label><PersonIcon class="userIcon"/>
+
+                    </div>
+
+                    <div class="middle">
+                        <hr/>
+                        <QueueAnim delay={500}>
+                            <div key={1}>
+                                <button className="menu_btn" onClick={this._onButtonClick}> Dashboard</button>
+                            </div>
+                            <div key={2}>
+                                <button className="menu_btn">User Management</button>
+                            </div>
+                            <div key={3}>
+                                <button className="menu_btn" onClick={this._onButtonClick2}>Partner Management</button>
+                            </div>
+                            <div key={4}>
+                                <button className="menu_btn">Bank Representative Management</button>
+                            </div>
+                            <div key={5}>
+                                <button className="menu_btn">Com Bank Branch Management</button>
+                            </div>
+                            <div key={6}>
+                                <button className="menu_btn">SL Embassy Management</button>
+                            </div>
+                            <div key={7}>
+                                <button className="menu_btn">Promotion Management</button>
+                            </div>
+                        </QueueAnim>
+                    </div>
+
+                    <div class="bottom">
+
+                        <QueueAnim delay={1500}>
+                            <hr key={8}/>
+                            <button key={9} class="menu_btn_settings"><SettingsIcon class="settingsBtn"/> Settings
+                            </button>
+
+
+                            <button key={10} class="menu_btn_logout"><ExitToAppIcon class="logoutBtn"/> Logout</button>
+
+                        </QueueAnim>
+                    </div>
+
 
                 </div>
-
-                <div class="middle">
-                    <hr/>
-                    <button className="menu_btn" onClick={this._onButtonClick}> Dashboard</button>
-
-
-                    <button className="menu_btn">User Management</button>
-
-
-                    <button className="menu_btn" onClick={this._onButtonClick2}>Partner Management</button>
-
-
-                    <button className="menu_btn">Bank Representative Management</button>
-
-
-                    <button className="menu_btn">Com Bank Branch Management</button>
-
-
-                    <button className="menu_btn">SL Embassy Management</button>
-
-
-                    <button className="menu_btn" >Promotion Management</button>
-
-                </div>
-
-                <div class="bottom">
-                    <hr/>
-                    <button class="menu_btn_settings"><SettingsIcon class="xxx"/> Settings</button>
-                    <button class="menu_btn_logout"><ExitToAppIcon class="zzz"/> Logout</button>
-
-                </div>
-
-            </div>
                 {this.state.showComponent ?
-                    <Overview /> :
+                    <Overview/> :
                     null
                 }
 

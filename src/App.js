@@ -9,7 +9,7 @@ import Overview from "./components/Overview";
 
 function App() {
   return (
-    <div >
+    <div class="main">
         <header >
             <meta
                 name="viewport"

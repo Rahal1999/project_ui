@@ -1,8 +1,9 @@
 .left_menu {
     width: 24%;
     background-color: rgba(5, 45, 64, 0.96) !important;
-    height: 675px;
+    height: 100%;
     position: fixed;
+    overflow-x: hidden;
 }
 
 .menu_btn{
@@ -12,6 +13,7 @@
     padding: 10px;
     border: none;
     color: white;
+
 }
 
 .menu_btn_settings{
@@ -79,7 +81,8 @@ position: relative;
 }
 
 .table{
-    margin-left: 340px;
+    margin-left: 27%;
+
 }
 
 .topbar {
@@ -100,9 +103,9 @@ position: relative;
 
 
 .addicon{
-    right: 50px;
-    top: 14px;
-    position: absolute;
+    right: 50px !important;
+    top: 14px !important;
+    position: absolute !important;
 
 }
 
@@ -138,7 +141,7 @@ position: relative;
 
 .MuiAppBar-colorPrimary {
     color: #fff;
-    background-color: #0a3144 !important;
+    background-color: rgba(5, 45, 64, 0.96) !important;
 }
 
 
@@ -146,11 +149,11 @@ position: relative;
     position: relative;
 }
 
-.WithStyles\(ForwardRef\(TableCell\)\)-head-291 {
-    color: #fff;
-    background-color: rgba(5, 45, 64, 0.96) !important;
-/*background-color: rgb(51, 153, 197) !important;*/
-}
+/*.WithStyles\(ForwardRef\(TableCell\)\)-head-495 {*/
+    /*color: #fff;*/
+    /*background-color: rgba(5, 45, 64, 0.96) !important;*/
+/*!*background-color: rgb(51, 153, 197) !important;*!*/
+/*}*/
 
 
 /*.MuiGrid-container {*/
@@ -213,6 +216,9 @@ position: relative;
     margin-left: 77%;
     top: 5px;
     color: white !important;
+
+
+
 }
 
 .noOfUserIcon{
@@ -265,9 +271,11 @@ position: relative;
 .middle{
     margin-top: 2%;
     position: relative;
+    max-height: 38%;
+    height: inherit;
 }
 
-.zzz{
+.logoutBtn{
     fill: currentColor;
 
     width: 1em;
@@ -283,7 +291,7 @@ position: relative;
     color: white;
     top: 20%;
 }
-.xxx{
+.settingsBtn{
     fill: currentColor;
 
     width: 1em;
@@ -299,3 +307,50 @@ position: relative;
     color: white;
     top: 20%;
 }
+
+
+.middle button:hover {
+    background-color: rgba(5, 87, 122, 0.9);
+}
+
+
+.middle button:focus  {
+    color: #fff;
+    background-color: rgba(43, 62, 70, 0.04);
+    border-left: 6px solid #00afb8;
+    border-bottom: 1px solid  #00afb8;
+    border-top: 1px solid  #00afb8;
+    border-right: 1px solid  #00afb8;
+
+}
+
+
+
+
+.tooltip {
+    position: relative;
+    /* display: inline-block; */
+    /* border-bottom: 1px dotted black; */
+    border-bottom: 1px solid #0000001f;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    /*width: 120px;*/
+    background-color: #000000;
+    color: #fff;
+position: relative;
+    left: 70%;
+
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.rotate {
+    -moz-transition: all .5s linear;
+    -webkit-transition: all .5s linear;
+    transition: all .5s linear;
+}
+

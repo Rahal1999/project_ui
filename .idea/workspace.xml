@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="adbeb066-551f-4588-97a3-8b12f2a34af7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LeftMenue.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Overview.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Overview.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/PartnerManagementnew.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PartnerManagementnew.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/gettyimages-608924305-612x612.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,8 +42,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="342" column="12" selection-start-line="342" selection-start-column="12" selection-end-line="342" selection-end-column="12" />
+            <state relative-caret-position="254">
+              <caret line="341" column="3" lean-forward="true" selection-start-line="341" selection-start-column="3" selection-end-line="341" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -61,8 +51,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/PartnerManagementnew.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="284" column="32" selection-start-line="284" selection-start-column="32" selection-end-line="284" selection-end-column="32" />
+            <state relative-caret-position="45">
+              <caret line="219" column="92" selection-start-line="219" selection-start-column="92" selection-end-line="219" selection-end-column="92" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -147,9 +137,9 @@
         <option value="$PROJECT_DIR$/src/index.css" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/components/Test.js" />
-        <option value="$PROJECT_DIR$/src/components/style.css" />
         <option value="$PROJECT_DIR$/src/components/Overview.js" />
         <option value="$PROJECT_DIR$/src/App.css" />
+        <option value="$PROJECT_DIR$/src/components/style.css" />
         <option value="$PROJECT_DIR$/src/components/PartnerManagementnew.js" />
       </list>
     </option>
@@ -195,7 +185,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1576644456114" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1576646808536" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -232,12 +222,12 @@
       <workItem from="1575431517625" duration="301000" />
       <workItem from="1575431894011" duration="94256000" />
       <workItem from="1576147919130" duration="24758000" />
-      <workItem from="1576463662648" duration="37285000" />
+      <workItem from="1576463662648" duration="39387000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="163345000" />
+    <option name="totallyTimeSpent" value="165447000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -262,7 +252,7 @@
       <window_info anchor="bottom" id="Messages" order="0" weight="0.32903227" />
       <window_info anchor="bottom" id="TypeScript" order="1" />
       <window_info anchor="bottom" id="Version Control" order="2" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="3" visible="true" weight="0.38064516" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="3" visible="true" weight="0.35" />
       <window_info anchor="bottom" id="Database Changes" order="4" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
@@ -417,13 +407,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="342" column="12" selection-start-line="342" selection-start-column="12" selection-end-line="342" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
@@ -431,10 +414,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="341" column="3" lean-forward="true" selection-start-line="341" selection-start-column="3" selection-end-line="341" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/PartnerManagementnew.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="284" column="32" selection-start-line="284" selection-start-column="32" selection-end-line="284" selection-end-column="32" />
+        <state relative-caret-position="45">
+          <caret line="219" column="92" selection-start-line="219" selection-start-column="92" selection-end-line="219" selection-end-column="92" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

@@ -5,6 +5,8 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
+import Fade from '@material-ui/core/Fade';
+import Zoom from '@material-ui/core/Zoom';
 import Paper from '@material-ui/core/Paper';
 import DeleteOutlineOutlinedIcon from '@material-ui/icons/DeleteOutlineOutlined';
 import Typography from '@material-ui/core/Typography';
@@ -26,6 +28,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 import Test from "./Test";
+import Tooltip from '@material-ui/core/Tooltip'
 import QueueAnim from 'rc-queue-anim';
 import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
 
@@ -214,13 +217,14 @@ export default function PartnerManagementnew() {
 
         <IconButton>
             <div class="tableicons">
-
+                <Tooltip title={"Edit Details"} placement="right" TransitionComponent={Zoom}>
                 <EditOutlinedIcon  color={"primary"} onClick={handleClickOpenUpdate}/>
+                </Tooltip>
 
-
-
+                <Tooltip title={"Delete Partner"} placement="right" TransitionComponent={Zoom}>
                     <DeleteOutlineOutlinedIcon color={"error"} onClick={handleClickOpen}/>
-            </div>
+                </Tooltip>
+                    </div>
         </IconButton>
     );
 
@@ -286,9 +290,10 @@ export default function PartnerManagementnew() {
                             </div>
                         </Toolbar>
 
-                        <div class="addicon ">
+                        <div class="addicon">
+                            <Tooltip title={"Create Partner"} TransitionComponent={Fade} TransitionProps={{ timeout: 600 }}>
                             <AddOutlinedIcon class="add" onClick={handleClickOpenCreate}/>
-                                {/*<span class="tooltiptext">Create Partner</span>*/}
+                            </Tooltip>
                             </div>
                     </AppBar>
 

@@ -8,6 +8,7 @@ import {
     KeyboardDatePicker,
 } from '@material-ui/pickers';
 import ReactDOM from "react-dom";
+import Divider from '@material-ui/core/Divider';
 import Chart from "react-google-charts";
 import LeftNavigationBar from "./LeftNavigationBar";
 import Test from "./Test";
@@ -21,6 +22,8 @@ import Paper from '@material-ui/core/Paper';
 import {withStyles, makeStyles} from '@material-ui/core/styles';
 import PersonIcon from '@material-ui/icons/Person';
 import Zoom from '@material-ui/core/Zoom';
+import Typography from '@material-ui/core/Typography';
+
 import QueueAnim from 'rc-queue-anim';
 
 const StyledTableCell = withStyles(theme => ({
@@ -103,7 +106,13 @@ const useStyles = makeStyles({
         backgroundColor:'red',
         position:'relative'
     },
+    heading:{
+        position:'relative',
+        right:'24%',
+        fontsize:'15%',
+        marginTop:'1%'
 
+    },
 });
 
 
@@ -148,10 +157,11 @@ export default function Overview() {
                 {/*<div class="overviewHeader">*/}
                     <QueueAnim delay={500}>
                         <div key={1}>
+
                             <MuiPickersUtilsProvider utils={DateFnsUtils}>
 
                                 <Grid container justify="flex-end">
-
+                                    <Typography variant={"h5"} className={classes.heading}>Dashboard</Typography>
 
                                     <KeyboardDatePicker
 

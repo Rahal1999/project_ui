@@ -28,6 +28,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 import Test from "./Test";
+import Slide from '@material-ui/core/Slide';
 import Tooltip from '@material-ui/core/Tooltip'
 import QueueAnim from 'rc-queue-anim';
 import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
@@ -38,7 +39,7 @@ const useStyles = makeStyles(theme => ({
         width: '97%',
         overflowX: 'auto',
         height: '100%',
-        maxHeight:'100%',
+        maxHeight: '100%',
 
 
     },
@@ -116,12 +117,12 @@ const useStyles = makeStyles(theme => ({
         alignItems: 'center',
         justifyContent: 'center',
     },
-        backgroud:{
-            backgroundColor:'#eaf2fd',
-            width:'100%',
-            height:'100%',
-            position:'inherit'
-        },
+    backgroud: {
+        backgroundColor: '#eaf2fd',
+        width: '100%',
+        height: '100%',
+        position: 'inherit'
+    },
     dialog: {
         width: '100%',
     },
@@ -218,13 +219,13 @@ export default function PartnerManagementnew() {
         <IconButton>
             <div class="tableicons">
                 <Tooltip title={"Edit Details"} placement="right" TransitionComponent={Zoom}>
-                <EditOutlinedIcon  color={"primary"} onClick={handleClickOpenUpdate}/>
+                    <EditOutlinedIcon color={"primary"} onClick={handleClickOpenUpdate}/>
                 </Tooltip>
 
                 <Tooltip title={"Delete Partner"} placement="right" TransitionComponent={Zoom}>
                     <DeleteOutlineOutlinedIcon color={"error"} onClick={handleClickOpen}/>
                 </Tooltip>
-                    </div>
+            </div>
         </IconButton>
     );
 
@@ -247,6 +248,10 @@ export default function PartnerManagementnew() {
 
     ];
 
+    const Transition = React.forwardRef(function Transition(props, ref) {
+        return <Slide direction="up" ref={ref} {...props} />;
+    });
+
 
     const classes = useStyles();
 
@@ -257,93 +262,98 @@ export default function PartnerManagementnew() {
                 <div class="topbar">
 
                     {/*<Typography>Partner Management</Typography>*/}
+                    <QueueAnim delay={500}>
+                        <AppBar key={1} position="static">
+                            <Toolbar>
+                                <IconButton
+                                    edge="start"
+                                    className={classes.menuButton}
+                                    color="inherit"
+                                    aria-label="open drawer"
+                                >
 
-                    <AppBar position="static">
-                        <Toolbar>
-                            <IconButton
-                                edge="start"
-                                className={classes.menuButton}
-                                color="inherit"
-                                aria-label="open drawer"
-                            >
+                                </IconButton>
 
-                            </IconButton>
+                                <Typography className={classes.title} variant="h6" noWrap>
+                                    Partner Management
+                                </Typography>
 
-                            <Typography className={classes.title} variant="h6" noWrap>
-                                Partner Management
-                            </Typography>
+                                <div className={classes.search}>
+                                    <div className={classes.searchIcon}>
+                                        <SearchIcon class="search"/>
+                                    </div>
+                                    <InputBase
+                                        placeholder="Search…"
+                                        classes={{
+                                            root: classes.inputRoot,
+                                            input: classes.inputInput,
+                                        }}
+                                        inputProps={{'aria-label': 'search'}}
+                                    />
 
-                            <div className={classes.search}>
-                                <div className={classes.searchIcon}>
-                                    <SearchIcon class="search"/>
+
                                 </div>
-                                <InputBase
-                                    placeholder="Search…"
-                                    classes={{
-                                        root: classes.inputRoot,
-                                        input: classes.inputInput,
-                                    }}
-                                    inputProps={{'aria-label': 'search'}}
-                                />
+                            </Toolbar>
 
-
+                            <div class="addicon">
+                                <Tooltip title={"Create Partner"} TransitionComponent={Fade}
+                                         TransitionProps={{timeout: 600}}>
+                                    <AddOutlinedIcon class="add" onClick={handleClickOpenCreate}/>
+                                </Tooltip>
                             </div>
-                        </Toolbar>
-
-                        <div class="addicon">
-                            <Tooltip title={"Create Partner"} TransitionComponent={Fade} TransitionProps={{ timeout: 600 }}>
-                            <AddOutlinedIcon class="add" onClick={handleClickOpenCreate}/>
-                            </Tooltip>
-                            </div>
-                    </AppBar>
-
+                        </AppBar>
+                    </QueueAnim>
 
                 </div>
                 {/*<h1>Partner Management</h1>*/}
-                <Paper className={classes.root}>
-                    <Table aria-label="Partner Management">
-                        <TableHead>
-                            <TableRow>
-                                <TableCell>Partner Name</TableCell>
-                                <TableCell align="center">Address</TableCell>
-                                <TableCell align="center">E-mail</TableCell>
-                                <TableCell align="center">Contact</TableCell>
-                                <TableCell align="center">Country</TableCell>
-                                <TableCell align="center">Opening Hours</TableCell>
-                                <TableCell align="center">Actions</TableCell>
-                            </TableRow>
-                        </TableHead>
-                        <TableBody>
-
-                            {rows.map(row => (
-                                <TableRow key={row.name}>
-                                    <TableCell component="th" scope="row">
-                                        {row.name}
-                                    </TableCell>
-
-                                    <TableCell align="center">{row.address}</TableCell>
-                                    <TableCell align="center">{row.email}</TableCell>
-                                    <TableCell align="center">{row.contact}</TableCell>
-                                    <TableCell align="center">{row.country}</TableCell>
-                                    <TableCell align="center">{row.openHours}</TableCell>
-                                    <TableCell align="center">{row.actions}
-
-
-                                    </TableCell>
-
+                <QueueAnim delay={700}>
+                    <Paper key={2} className={classes.root}>
+                        <Table aria-label="Partner Management">
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell>Partner Name</TableCell>
+                                    <TableCell align="center">Address</TableCell>
+                                    <TableCell align="center">E-mail</TableCell>
+                                    <TableCell align="center">Contact</TableCell>
+                                    <TableCell align="center">Country</TableCell>
+                                    <TableCell align="center">Opening Hours</TableCell>
+                                    <TableCell align="center">Actions</TableCell>
                                 </TableRow>
+                            </TableHead>
+                            <TableBody>
+
+                                {rows.map(row => (
+                                    <TableRow key={row.name}>
+                                        <TableCell component="th" scope="row">
+                                            {row.name}
+                                        </TableCell>
+
+                                        <TableCell align="center">{row.address}</TableCell>
+                                        <TableCell align="center">{row.email}</TableCell>
+                                        <TableCell align="center">{row.contact}</TableCell>
+                                        <TableCell align="center">{row.country}</TableCell>
+                                        <TableCell align="center">{row.openHours}</TableCell>
+                                        <TableCell align="center">{row.actions}
 
 
-                            ))}
+                                        </TableCell>
+
+                                    </TableRow>
 
 
-                        </TableBody>
-                    </Table>
-                </Paper>
+                                ))}
+
+
+                            </TableBody>
+                        </Table>
+                    </Paper>
+                </QueueAnim>
                 <Dialog
                     className={classes.dialog}
+                    TransitionComponent={Transition}
                     open={open}
                     onClose={handleClose}
+
                 >
                     <DialogTitle className={classes.removeDialog}>Remove Partner</DialogTitle>
 
@@ -368,8 +378,6 @@ export default function PartnerManagementnew() {
                 </Dialog>
 
 
-
-
                 <Dialog
                     className={classes.dialog}
                     open={openCreate}
@@ -381,74 +389,75 @@ export default function PartnerManagementnew() {
 
 
                     <DialogContent>
-                        <QueueAnim >
+                        <QueueAnim>
                             <div key={1}>
 
-                        <DialogContentText>
+                                <DialogContentText>
 
 
-                            <div key={2}>
+                                    <div key={2}>
 
-                                <InputLabel id="demo-controlled-open-select-label"
-                                            className={classes.selectInputLabel}>Country</InputLabel>
-                                <Select
-                                    labelId="demo-controlled-open-select-label"
-                                    id="demo-controlled-open-select"
+                                        <InputLabel id="demo-controlled-open-select-label"
+                                                    className={classes.selectInputLabel}>Country</InputLabel>
+                                        <Select
+                                            labelId="demo-controlled-open-select-label"
+                                            id="demo-controlled-open-select"
 
-                                    open={openCountrySelect}
-                                    onClose={handleCloseCountrySelect}
-                                    onOpen={handleClickOpenCountrySelect}
-                                    value={age}
-                                    onChange={handleChange}
-                                    className={classes.countrySelect}
-                                    variant={"outlined"}
-                                >
-                                    <MenuItem value="">
-                                        <em>None</em>
-                                    </MenuItem>
-                                    <MenuItem value={10}>Jordan</MenuItem>
-                                    <MenuItem value={20}>Kuwait</MenuItem>
-                                    <MenuItem value={30}>Bahrain</MenuItem>
-                                </Select>
+                                            open={openCountrySelect}
+                                            onClose={handleCloseCountrySelect}
+                                            onOpen={handleClickOpenCountrySelect}
+                                            value={age}
+                                            onChange={handleChange}
+                                            className={classes.countrySelect}
+                                            variant={"outlined"}
+                                        >
+                                            <MenuItem value="">
+                                                <em>None</em>
+                                            </MenuItem>
+                                            <MenuItem value={10}>Jordan</MenuItem>
+                                            <MenuItem value={20}>Kuwait</MenuItem>
+                                            <MenuItem value={30}>Bahrain</MenuItem>
+                                        </Select>
 
+                                    </div>
+
+                                    <div key={3}>
+                                        <TextField className={classes.countrytxt} id="outlined-basic2"
+                                                   label="Partner Name"
+                                                   variant="outlined" placeholder={"John Smith"}/>
+                                    </div>
+                                    <div key={4}>
+                                        <TextField className={classes.countrytxt} id="outlined-basic2" label="Address"
+                                                   variant="outlined" placeholder={"No.11,Main Street, Kuwait"}/>
+                                    </div>
+
+
+                                    <div key={5}>
+                                        <TextField className={classes.countrytxt} id="outlined-basic2" label="E-mail"
+                                                   variant="outlined" placeholder={"abc@gmail.com"}/>
+                                    </div>
+
+                                    <div key={6}>
+                                        <TextField className={classes.countrytxt} id="outlined-basic2" label="Contact"
+                                                   variant="outlined" placeholder={"094-051-6565"}/>
+                                    </div>
+
+                                    <div key={7}>
+                                        <TextField
+                                            id="outlined-multiline-static"
+                                            label="Opening Hours"
+                                            multiline
+                                            rows="4"
+                                            placeholder="eg : Sun: 6.30am-8.30am "
+                                            className={classes.textField}
+                                            margin="normal"
+                                            variant="outlined"
+                                        />
+                                    </div>
+
+                                </DialogContentText>
                             </div>
-
-                            <div key={3}>
-                                <TextField className={classes.countrytxt} id="outlined-basic2" label="Partner Name"
-                                           variant="outlined" placeholder={"John Smith"}/>
-                            </div>
-                            <div key={4}>
-                                <TextField className={classes.countrytxt} id="outlined-basic2" label="Address"
-                                           variant="outlined" placeholder={"No.11,Main Street, Kuwait"}/>
-                            </div>
-
-
-                            <div key={5}>
-                                <TextField className={classes.countrytxt} id="outlined-basic2" label="E-mail"
-                                           variant="outlined" placeholder={"abc@gmail.com"}/>
-                            </div>
-
-                            <div key={6}>
-                                <TextField className={classes.countrytxt} id="outlined-basic2" label="Contact"
-                                           variant="outlined" placeholder={"094-051-6565"}/>
-                            </div>
-
-                                <div key={7}>
-                            <TextField
-                                id="outlined-multiline-static"
-                                label="Opening Hours"
-                                multiline
-                                rows="4"
-                                placeholder="eg : Sun: 6.30am-8.30am "
-                                className={classes.textField}
-                                margin="normal"
-                                variant="outlined"
-                            />
-                                </div>
-
-                        </DialogContentText>
-                            </div>
-                    </QueueAnim>
+                        </QueueAnim>
                     </DialogContent>
 
 
@@ -457,7 +466,7 @@ export default function PartnerManagementnew() {
 
                         <Button onClick={handleCloseCreate} color="primary">Close</Button>
 
-                                <Button className={classes.dialogCreateBtn} onClick={handleCloseCreate}
+                        <Button className={classes.dialogCreateBtn} onClick={handleCloseCreate}
                                 color="secondary">Create</Button>
 
 
@@ -476,67 +485,68 @@ export default function PartnerManagementnew() {
                     <DialogContent>
                         <QueueAnim>
                             <div key={1}>
-                        <DialogContentText>
+                                <DialogContentText>
 
-                            <div>
+                                    <div>
 
-                                <InputLabel id="demo-controlled-open-select-label"
-                                            className={classes.selectInputLabel}
-                                >Country</InputLabel>
-                                <Select
-                                    labelId="demo-controlled-open-select-label"
-                                    id="demo-controlled-open-select"
+                                        <InputLabel id="demo-controlled-open-select-label"
+                                                    className={classes.selectInputLabel}
+                                        >Country</InputLabel>
+                                        <Select
+                                            labelId="demo-controlled-open-select-label"
+                                            id="demo-controlled-open-select"
 
-                                    open={openCountrySelect}
-                                    onClose={handleCloseCountrySelect}
-                                    onOpen={handleClickOpenCountrySelect}
-                                    value={age}
-                                    onChange={handleChange}
-                                    className={classes.countrySelect}
-                                    variant={"outlined"}
+                                            open={openCountrySelect}
+                                            onClose={handleCloseCountrySelect}
+                                            onOpen={handleClickOpenCountrySelect}
+                                            value={age}
+                                            onChange={handleChange}
+                                            className={classes.countrySelect}
+                                            variant={"outlined"}
 
-                                >
-                                    <MenuItem value="">
-                                        <em>None</em>
-                                    </MenuItem>
-                                    <MenuItem value={10}>Dubai</MenuItem>
-                                    <MenuItem value={20}>USA</MenuItem>
-                                    <MenuItem value={30}>Canada</MenuItem>
-                                </Select>
+                                        >
+                                            <MenuItem value="">
+                                                <em>None</em>
+                                            </MenuItem>
+                                            <MenuItem value={10}>Dubai</MenuItem>
+                                            <MenuItem value={20}>USA</MenuItem>
+                                            <MenuItem value={30}>Canada</MenuItem>
+                                        </Select>
 
-                            </div>
+                                    </div>
 
-                            <div>
-                                <TextField className={classes.countrytxt} id="outlined-basic2" label="Partner Name"
-                                           variant="outlined"/>
-                            </div>
-                            <div>
-                                <TextField className={classes.countrytxt} id="outlined-basic2" label="Address"
-                                           variant="outlined"/>
-                            </div>
+                                    <div>
+                                        <TextField className={classes.countrytxt} id="outlined-basic2"
+                                                   label="Partner Name"
+                                                   variant="outlined"/>
+                                    </div>
+                                    <div>
+                                        <TextField className={classes.countrytxt} id="outlined-basic2" label="Address"
+                                                   variant="outlined"/>
+                                    </div>
 
 
-                            <div>
-                                <TextField className={classes.countrytxt} id="outlined-basic2" label="E-mail"
-                                           variant="outlined"/>
-                            </div>
-                            <div>
-                                <TextField className={classes.countrytxt} id="outlined-basic2" label="Contact"
-                                           variant="outlined"/>
-                            </div>
+                                    <div>
+                                        <TextField className={classes.countrytxt} id="outlined-basic2" label="E-mail"
+                                                   variant="outlined"/>
+                                    </div>
+                                    <div>
+                                        <TextField className={classes.countrytxt} id="outlined-basic2" label="Contact"
+                                                   variant="outlined"/>
+                                    </div>
 
-                            <TextField
-                                id="outlined-multiline-static"
-                                label="Opening Hours"
-                                multiline
-                                rows="4"
-                                placeholder="eg : Sun: 6.30am-8.30am "
-                                className={classes.textField}
-                                margin="normal"
-                                variant="outlined"
-                            />
+                                    <TextField
+                                        id="outlined-multiline-static"
+                                        label="Opening Hours"
+                                        multiline
+                                        rows="4"
+                                        placeholder="eg : Sun: 6.30am-8.30am "
+                                        className={classes.textField}
+                                        margin="normal"
+                                        variant="outlined"
+                                    />
 
-                        </DialogContentText>
+                                </DialogContentText>
                             </div>
                         </QueueAnim>
                     </DialogContent>

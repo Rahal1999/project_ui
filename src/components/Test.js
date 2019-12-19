@@ -8,6 +8,7 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import {makeStyles} from "@material-ui/core";
 import SettingsIcon from '@material-ui/icons/Settings';
 import PartnerManagementnew from "./PartnerManagementnew";
+import Divider from '@material-ui/core/Divider';
 import QueueAnim from 'rc-queue-anim';
 // const useStyles = makeStyles(theme =>({
 //     logoutIcon:{
@@ -63,7 +64,7 @@ class Test extends React.Component {
                     </div>
 
                     <div class="middle">
-                        <hr/>
+                        <hr color={'00afb8'}/>
                         <QueueAnim delay={500}>
                             <div key={1}>
                                 <button className="menu_btn" onClick={this._onButtonClick}> Dashboard</button>
@@ -92,7 +93,7 @@ class Test extends React.Component {
                     <div class="bottom">
 
                         <QueueAnim delay={1500}>
-                            <hr key={8}/>
+                            <hr color={'00afb8'} key={8}/>
                             <button key={9} class="menu_btn_settings"><SettingsIcon class="settingsBtn"/> Settings
                             </button>
 

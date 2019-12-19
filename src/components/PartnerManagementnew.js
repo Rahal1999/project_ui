@@ -40,7 +40,8 @@ const useStyles = makeStyles(theme => ({
         overflowX: 'auto',
         height: '100%',
         maxHeight: '100%',
-
+        // borderBottomLeftRadius:'30px',
+        borderBottomRightRadius:'30px'
 
     },
 
@@ -126,7 +127,10 @@ const useStyles = makeStyles(theme => ({
     dialog: {
         width: '100%',
     },
-
+appbar:{
+    borderTopLeftRadius: '30px',
+    borderTopRightRadius: '30px',
+},
     inputRoot: {
         color: 'inherit',
     },
@@ -260,10 +264,8 @@ export default function PartnerManagementnew() {
             {/*<Test/>*/}
             <div class="table">
                 <div class="topbar">
-
-                    {/*<Typography>Partner Management</Typography>*/}
                     <QueueAnim delay={500}>
-                        <AppBar key={1} position="static">
+                        <AppBar className={classes.appbar} key={1} position="static">
                             <Toolbar>
                                 <IconButton
                                     edge="start"

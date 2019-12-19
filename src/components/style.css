@@ -83,10 +83,12 @@ position: relative;
 .table{
     margin-left: 27%;
 
+
 }
 
 .topbar {
     width: 97%;
+
 }
 
 .makeStyles-searchIcon-15 {
@@ -321,6 +323,9 @@ position: relative;
     border-bottom: 1px solid  #00afb8;
     border-top: 1px solid  #00afb8;
     border-right: 1px solid  #00afb8;
+    /*border-bottom-left-radius: 30px;*/
+    /*border-bottom-right-radius: 30px;*/
+    /*border-top-left-radius: 30px;*/
 
 }
 

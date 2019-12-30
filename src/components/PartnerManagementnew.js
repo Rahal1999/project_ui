@@ -156,6 +156,7 @@ function createData(name, address, email, contact, country, openHours, actions) 
 export default function PartnerManagementnew() {
 
 
+
     const [age, setAge] = React.useState('');
 
     const [open, setOpen] = React.useState(false);
@@ -195,6 +196,13 @@ export default function PartnerManagementnew() {
     const handleClickOpen = () => {
         setOpen(true);
 
+        console.log("dsf")
+
+    };
+
+    const senddata = (name) => {
+
+        console.log(name)
 
     };
 
@@ -216,6 +224,7 @@ export default function PartnerManagementnew() {
     const handleOpen = () => {
         setOpen(true);
     };
+
 
 
     const add = (
@@ -298,8 +307,8 @@ export default function PartnerManagementnew() {
                             </Toolbar>
 
                             <div class="addicon">
-                                <Tooltip title={"Create Partner"} TransitionComponent={Fade}
-                                         TransitionProps={{timeout: 600}}>
+                                <Tooltip title={"Create Partner"} TransitionComponent={Zoom}>
+                                         {/*// TransitionProps={{timeout: 600}}*/}
                                     <AddOutlinedIcon class="add" onClick={handleClickOpenCreate}/>
                                 </Tooltip>
                             </div>
@@ -326,19 +335,13 @@ export default function PartnerManagementnew() {
 
                                 {rows.map(row => (
                                     <TableRow key={row.name}>
-                                        <TableCell component="th" scope="row">
-                                            {row.name}
-                                        </TableCell>
-
+                                        <TableCell component="th" scope="row" >{row.name}</TableCell>
                                         <TableCell align="center">{row.address}</TableCell>
                                         <TableCell align="center">{row.email}</TableCell>
                                         <TableCell align="center">{row.contact}</TableCell>
                                         <TableCell align="center">{row.country}</TableCell>
                                         <TableCell align="center">{row.openHours}</TableCell>
-                                        <TableCell align="center">{row.actions}
-
-
-                                        </TableCell>
+                                        <TableCell  align="center">{row.actions}</TableCell>
 
                                     </TableRow>
 
@@ -352,7 +355,7 @@ export default function PartnerManagementnew() {
                 </QueueAnim>
                 <Dialog
                     className={classes.dialog}
-                    TransitionComponent={Transition}
+                    // TransitionComponent={Transition}
                     open={open}
                     onClose={handleClose}
 
@@ -363,7 +366,7 @@ export default function PartnerManagementnew() {
 
                         <DialogContentText>
 
-                            Are you sure you want to delete this row data?
+                            Are you sure you want to delete  this row data?
 
                         </DialogContentText>
 

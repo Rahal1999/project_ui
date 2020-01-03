@@ -15,7 +15,9 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import InputBase from '@material-ui/core/InputBase';
 import AddOutlinedIcon from '@material-ui/icons/AddOutlined';
-import SearchIcon from '@material-ui/icons/Search';
+import PrintIcon from '@material-ui/icons/Print';
+import GetAppIcon from '@material-ui/icons/GetApp';
+import AddBoxIcon from '@material-ui/icons/AddBox';
 import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -26,12 +28,20 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
+import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
+import Divider from '@material-ui/core/Divider';
+import Avatar from '@material-ui/core/Avatar';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import SearchIcon from '@material-ui/icons/Search';
 import Select from '@material-ui/core/Select';
 import Test from "./Test";
 import Slide from '@material-ui/core/Slide';
 import Tooltip from '@material-ui/core/Tooltip'
 import QueueAnim from 'rc-queue-anim';
 import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
+import Grid from '@material-ui/core/Grid';
+import {MuiPickersUtilsProvider} from "@material-ui/pickers";
+import Switch from '@material-ui/core/Switch';
 
 
 const useStyles = makeStyles(theme => ({
@@ -41,7 +51,7 @@ const useStyles = makeStyles(theme => ({
         height: '100%',
         maxHeight: '100%',
         // borderBottomLeftRadius:'30px',
-        borderBottomRightRadius:'30px'
+        borderBottomRightRadius: '30px'
 
     },
 
@@ -82,9 +92,9 @@ const useStyles = makeStyles(theme => ({
     table: {
         minWidth: 250,
     },
-    menuButton: {
-        marginRight: theme.spacing(2),
-    },
+    // menuButton: {
+    //     marginRight: theme.spacing(2),
+    // },
     title: {
         flexGrow: 1,
         marginLeft: '-4%',
@@ -119,7 +129,7 @@ const useStyles = makeStyles(theme => ({
         justifyContent: 'center',
     },
     backgroud: {
-        backgroundColor: '#eaf2fd',
+        // backgroundColor: '#eaf2fd',
         width: '100%',
         height: '100%',
         position: 'inherit'
@@ -127,10 +137,10 @@ const useStyles = makeStyles(theme => ({
     dialog: {
         width: '100%',
     },
-appbar:{
-    borderTopLeftRadius: '30px',
-    borderTopRightRadius: '30px',
-},
+    appbar: {
+        borderTopLeftRadius: '30px',
+        borderTopRightRadius: '30px',
+    },
     inputRoot: {
         color: 'inherit',
     },
@@ -145,7 +155,87 @@ appbar:{
             },
         },
     },
+    darkmodeswitch: {
+        position: 'relative',
+        marginTop: '3%',
+        right: '3.5%',
 
+    },
+    notificationicon: {
+        position: 'relative',
+        marginTop: '3%',
+        right: '4%',
+    },
+    useravatar: {
+        position: 'relative',
+        marginTop: '3%',
+        right: '2.5%',
+        ficolor: 'red',
+        marginBottom:'0.5%',
+    },
+    verticaldivider: {
+        position: 'relative',
+        right: '3%',
+        marginTop: '3%',
+    },
+    username: {
+        position: 'relative',
+        right: '2%',
+        marginTop: '4%',
+    },
+    dropdownicon: {
+        position: 'relative',
+        right: '1.5%',
+        marginTop: '3.5%',
+    },
+    heading: {
+        position: 'relative',
+        right: '55%',
+        fontsize: '15%',
+        marginTop: '2.7%',
+
+    },
+    printicon: {
+        position: 'relative',
+        left: '8.5%',
+        marginTop:'1%',
+        marginBottom:'1%',
+    },
+    getappicon: {
+        position: 'relative',
+        left: '3.5%',
+        marginTop:'1%',
+        marginBottom:'1%',
+    },
+    addboxicon: {
+        position: 'relative',
+        right: '1.5%',
+        marginTop:'1%',
+        marginBottom:'1%',
+color:'#009fff',
+
+    },
+    searchicon:{
+        position: 'relative',
+        right: '45%',
+        marginTop:'1%',
+        marginBottom:'1%',
+
+    },
+    searchinput:{
+        position: 'relative',
+        right: '45%',
+        marginTop:'1.2%',
+        marginBottom:'1%',
+        fontsize: 'smaller',
+
+    },
+    tableheaders:{
+      color: 'rgba(0, 0, 0, 0.45)',
+    },
+    emailstyle:{
+      color:'#009fff',
+    },
 }));
 
 function createData(name, address, email, contact, country, openHours, actions) {
@@ -154,7 +244,6 @@ function createData(name, address, email, contact, country, openHours, actions) 
 
 
 export default function PartnerManagementnew() {
-
 
 
     const [age, setAge] = React.useState('');
@@ -168,6 +257,15 @@ export default function PartnerManagementnew() {
     const [openUpdate, setOpenUpdate] = React.useState(false);
 
     const [value, setValue] = React.useState('female');
+    const [opensettings, setOpensettings] = React.useState(false);
+
+    const handleClickOpensettings = () => {
+        setOpensettings(true);
+    };
+
+    const handleClosesettings = () => {
+        setOpensettings(false);
+    };
 
     const handleChange = event => {
         setValue(event.target.value);
@@ -226,7 +324,6 @@ export default function PartnerManagementnew() {
     };
 
 
-
     const add = (
 
         <IconButton>
@@ -273,47 +370,106 @@ export default function PartnerManagementnew() {
             {/*<Test/>*/}
             <div class="table">
                 <div class="topbar">
-                    <QueueAnim delay={500}>
-                        <AppBar className={classes.appbar} key={1} position="static">
-                            <Toolbar>
-                                <IconButton
-                                    edge="start"
-                                    className={classes.menuButton}
-                                    color="inherit"
-                                    aria-label="open drawer"
-                                >
+                    {/*<QueueAnim delay={500}>*/}
+                        <Grid container justify="flex-end">
+                            <Typography variant={"h5"} className={classes.heading}>Partner Management</Typography>
+                            <div className={classes.darkmodeswitch}>
+                                <Switch
 
-                                </IconButton>
-
-                                <Typography className={classes.title} variant="h6" noWrap>
-                                    Partner Management
-                                </Typography>
-
-                                <div className={classes.search}>
-                                    <div className={classes.searchIcon}>
-                                        <SearchIcon class="search"/>
-                                    </div>
-                                    <InputBase
-                                        placeholder="Search…"
-                                        classes={{
-                                            root: classes.inputRoot,
-                                            input: classes.inputInput,
-                                        }}
-                                        inputProps={{'aria-label': 'search'}}
-                                    />
+                                    defaultChecked
+                                    value="checkedF"
+                                    color="default"
+                                    inputProps={{'aria-label': 'checkbox with default color'}}
+                                />
 
 
-                                </div>
-                            </Toolbar>
-
-                            <div class="addicon">
-                                <Tooltip title={"Create Partner"} TransitionComponent={Zoom}>
-                                         {/*// TransitionProps={{timeout: 600}}*/}
-                                    <AddOutlinedIcon class="add" onClick={handleClickOpenCreate}/>
-                                </Tooltip>
                             </div>
-                        </AppBar>
-                    </QueueAnim>
+                            <div className={classes.notificationicon}>
+                                <NotificationsNoneIcon/>
+
+                            </div>
+
+
+                            <div className={classes.verticaldivider}>
+                                <Divider orientation="vertical"/>
+                            </div>
+                            <div className={classes.useravatar}>
+                                <Avatar alt="Remy Sharp">R</Avatar>
+
+                            </div>
+                            <div className={classes.username}>
+                                <label>John Doe </label>
+                            </div>
+                            <div className={classes.dropdownicon}>
+                                <ExpandMoreIcon onClick={handleClickOpensettings}/>
+                            </div>
+
+                        </Grid>
+                        <Divider/>
+                        <Grid container justify="flex-end">
+
+
+                            <SearchIcon className={classes.searchicon}/>
+
+                            <InputBase
+                                className={classes.searchinput}
+                                placeholder="Search…"
+                                // classes={{
+                                //     root: classes.inputRoot,
+                                //     input: classes.inputInput,
+                                // }}
+                                //
+                            />
+
+                            <PrintIcon className={classes.printicon}/>
+                            <GetAppIcon className={classes.getappicon}/>
+                            <AddBoxIcon className={classes.addboxicon} onClick={handleClickOpenCreate}/>
+
+
+                        </Grid>
+                        <Divider/>
+
+
+                        {/*<AppBar className={classes.appbar} key={1} position="static">*/}
+                            {/*<Toolbar>*/}
+                                {/*/!*<IconButton*!/*/}
+                                {/*/!*edge="start"*!/*/}
+                                {/*/!*className={classes.menuButton}*!/*/}
+                                {/*/!*color="inherit"*!/*/}
+                                {/*/!*aria-label="open drawer"*!/*/}
+                                {/*/!*>*!/*/}
+
+                                {/*/!*</IconButton>*!/*/}
+
+                                {/*<Typography className={classes.title} variant="h6" noWrap>*/}
+                                    {/*Partner Management*/}
+                                {/*</Typography>*/}
+
+                                {/*<div className={classes.search}>*/}
+                                    {/*<div className={classes.searchIcon}>*/}
+                                        {/*<SearchIcon class="search"/>*/}
+                                    {/*</div>*/}
+                                    {/*<InputBase*/}
+                                        {/*placeholder="Search…"*/}
+                                        {/*classes={{*/}
+                                            {/*root: classes.inputRoot,*/}
+                                            {/*input: classes.inputInput,*/}
+                                        {/*}}*/}
+                                        {/*inputProps={{'aria-label': 'search'}}*/}
+                                    {/*/>*/}
+
+
+                                {/*</div>*/}
+                            {/*</Toolbar>*/}
+
+                            {/*<div class="addicon">*/}
+                                {/*<Tooltip title={"Create Partner"} TransitionComponent={Zoom}>*/}
+                                    {/*// TransitionProps={{timeout: 600}}*/}
+                                    {/*<AddOutlinedIcon class="add" onClick={handleClickOpenCreate}/>*/}
+                                {/*</Tooltip>*/}
+                            {/*</div>*/}
+                        {/*// </AppBar>*/}
+                    {/*// </QueueAnim>*/}
 
                 </div>
                 {/*<h1>Partner Management</h1>*/}
@@ -322,26 +478,26 @@ export default function PartnerManagementnew() {
                         <Table aria-label="Partner Management">
                             <TableHead>
                                 <TableRow>
-                                    <TableCell>Partner Name</TableCell>
-                                    <TableCell align="center">Address</TableCell>
-                                    <TableCell align="center">E-mail</TableCell>
-                                    <TableCell align="center">Contact</TableCell>
-                                    <TableCell align="center">Country</TableCell>
-                                    <TableCell align="center">Opening Hours</TableCell>
-                                    <TableCell align="center">Actions</TableCell>
+                                    <TableCell className={classes.tableheaders} >PARTNER NAME</TableCell>
+                                    <TableCell className={classes.tableheaders} align="center">ADDRESS</TableCell>
+                                    <TableCell className={classes.tableheaders} align="center">E-MAIL</TableCell>
+                                    <TableCell className={classes.tableheaders} align="center">CONTACT</TableCell>
+                                    <TableCell className={classes.tableheaders} align="center">COUNTRY</TableCell>
+                                    <TableCell className={classes.tableheaders} align="center">OPENING HOURS</TableCell>
+                                    <TableCell className={classes.tableheaders} align="center">ACTIONS</TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
 
                                 {rows.map(row => (
                                     <TableRow key={row.name}>
-                                        <TableCell component="th" scope="row" >{row.name}</TableCell>
+                                        <TableCell component="th" scope="row">{row.name}</TableCell>
                                         <TableCell align="center">{row.address}</TableCell>
-                                        <TableCell align="center">{row.email}</TableCell>
+                                        <TableCell className={classes.emailstyle} align="center">{row.email}</TableCell>
                                         <TableCell align="center">{row.contact}</TableCell>
                                         <TableCell align="center">{row.country}</TableCell>
                                         <TableCell align="center">{row.openHours}</TableCell>
-                                        <TableCell  align="center">{row.actions}</TableCell>
+                                        <TableCell align="center">{row.actions}</TableCell>
 
                                     </TableRow>
 
@@ -366,7 +522,7 @@ export default function PartnerManagementnew() {
 
                         <DialogContentText>
 
-                            Are you sure you want to delete  this row data?
+                            Are you sure you want to delete this row data?
 
                         </DialogContentText>
 

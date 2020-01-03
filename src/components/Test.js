@@ -3,7 +3,7 @@ import './style.css';
 import PersonIcon from '@material-ui/icons/Person';
 import Button from '@material-ui/core/Button';
 import PermIdentityOutlinedIcon from '@material-ui/icons/PermIdentityOutlined';
-import Overview from "./Overview";
+import Dashboard from "./Dashboard";
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import {makeStyles} from "@material-ui/core";
 import SettingsIcon from '@material-ui/icons/Settings';
@@ -59,12 +59,12 @@ class Test extends React.Component {
                 <div class='left_menu'>
                     <div class="top">
 
-                        <label class="user">User</label><PersonIcon class="userIcon"/>
+                        {/*<label class="user">User</label><PersonIcon class="userIcon"/>*/}
 
                     </div>
 
                     <div class="middle">
-                        <hr color={'00afb8'}/>
+                        {/*<hr color={'00afb8'}/>*/}
                         <QueueAnim delay={500}>
                             <div key={1}>
                                 <button className="menu_btn" onClick={this._onButtonClick}> Dashboard</button>
@@ -90,23 +90,23 @@ class Test extends React.Component {
                         </QueueAnim>
                     </div>
 
-                    <div class="bottom">
+                    {/*<div class="bottom">*/}
 
-                        <QueueAnim delay={1500}>
-                            <hr color={'00afb8'} key={8}/>
-                            <button key={9} class="menu_btn_settings"><SettingsIcon class="settingsBtn"/> Settings
-                            </button>
+                        {/*<QueueAnim delay={1500}>*/}
+                            {/*<hr color={'00afb8'} key={8}/>*/}
+                            {/*<button key={9} class="menu_btn_settings"><SettingsIcon class="settingsBtn"/> Settings*/}
+                            {/*</button>*/}
 
 
-                            <button key={10} class="menu_btn_logout"><ExitToAppIcon class="logoutBtn"/> Logout</button>
+                            {/*<button key={10} class="menu_btn_logout"><ExitToAppIcon class="logoutBtn"/> Logout</button>*/}
 
-                        </QueueAnim>
-                    </div>
+                        {/*</QueueAnim>*/}
+                    {/*</div>*/}
 
 
                 </div>
                 {this.state.showComponent ?
-                    <Overview/> :
+                    <Dashboard/> :
                     null
                 }
 
@@ -170,7 +170,7 @@ export default Test;
 //                     <button className="menu_btn">SL Embassy Management</button>
 //
 //
-//                     <button className="menu_btn" onClick={<Overview/>} >Promotion Management</button>
+//                     <button className="menu_btn" onClick={<Dashboard/>} >Promotion Management</button>
 //
 //                 </div>
 //

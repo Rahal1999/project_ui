@@ -1,6 +1,7 @@
 .left_menu {
-    width: 24%;
-    background-color: rgba(5, 45, 64, 0.96) !important;
+    width: 18%;
+    /*background-color: rgba(5, 45, 64, 0.96) !important;*/
+    background-image: linear-gradient(#1724a9d1 , #040313);
     height: 100%;
     position: fixed;
     overflow-x: hidden;
@@ -12,9 +13,10 @@
     text-align: left;
     padding: 10px;
     border: none;
-    color: white;
+    color: #bbb2b2;
 
 }
+
 
 .menu_btn_settings{
     background: bottom;
@@ -38,10 +40,16 @@
     left:50%;
 position: relative;
 }
-
+.aaa{
+    position: relative;
+}
 .bottom{
     margin-top: 100%;
     cursor: pointer;
+}
+.top{
+    height: 10%;
+
 }
 .user{
     right: -75%;
@@ -142,14 +150,15 @@ position: relative;
 }
 
 .MuiAppBar-colorPrimary {
-    color: #fff;
-    background-color: rgba(5, 45, 64, 0.96) !important;
+    color: #f89600;
+    /*background-color: rgba(5, 45, 64, 0.96) !important;*/
 }
 
 
 .piechartOverview{
     position: relative;
 }
+
 
 /*.WithStyles\(ForwardRef\(TableCell\)\)-head-495 {*/
     /*color: #fff;*/
@@ -252,7 +261,7 @@ position: relative;
     position: relative;
     margin-left: 77%;
     top: 5%;
-    color: white !important;
+    /*color: white !important;*/
 }
 
 .MuiInput-root {
@@ -319,7 +328,7 @@ position: relative;
 .middle button:focus  {
     color: #fff;
     background-color: rgba(43, 62, 70, 0.04);
-    border-left: 6px solid #00afb8;
+    border-left: 6px solid #ffffff;
     border-bottom: 1px solid  #00afb8;
     border-top: 1px solid  #00afb8;
     border-right: 1px solid  #00afb8;
@@ -361,7 +370,48 @@ position: relative;
     transition: all .5s linear;
 }
 
+.mmmm{
+    font: inherit !important;
+    color: currentColor !important;
+    width: 100% !important;
+    border: 0 !important;
+    height: 1.1875em !important;
+    margin: 0 !important;
+    display: block !important;
+    padding: 0% 0 0% !important;
+    min-width: 0 !important;
+    background: none !important;
+    box-sizing: content-box !important;
+    animation-name: MuiInputBase-keyframes-auto-fill-cancel !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
 
+.dialogclass {
+    max-width: 600px;
+
+    left: 80% !important;
+    top: -60% !important;
+
+}
+.MuiSwitch-switchBase {
+    top: 9px !important;
+    left: 10px !important;
+    color: #000000 !important;
+    /* z-index: 34; */
+    position: absolute !important;
+    transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.zzz{
+    x: 517 !important;
+    y: 77 !important;
+    width: 104px !important;
+    height: 28px !important;
+    stroke: none;
+    stroke-width: 0;
+    fill-opacity: 0;
+    fill: rgb(255, 255, 255);
+}
 
 /**/
 /**/

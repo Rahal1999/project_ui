@@ -5,7 +5,7 @@ import './App.css';
 import PartnerManagementnew from "./components/PartnerManagementnew";
 import Sidebar from "./components/LeftNavigationBar";
 import Test from "./components/Test";
-import Overview from "./components/Overview";
+import Dashboard from "./components/Dashboard";
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
         {/*<Sidebar/>*/}
             <Test/>
             {/*<PartnerManagementnew/>*/}
-
+{/*<Dashboard/>*/}
 {/*<Overview/>*/}
     </div>
   );

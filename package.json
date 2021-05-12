@@ -8,7 +8,7 @@
     "@material-ui/icons": "^4.5.1",
     "@material-ui/pickers": "^3.2.8",
     "apexcharts": "^3.10.1",
-    "chart.js": "^1.1.1",
+    "chart.js": "^2.9.4",
     "material-table": "^1.54.1",
     "rc-queue-anim": "^1.8.3",
     "react": "^16.12.0",
